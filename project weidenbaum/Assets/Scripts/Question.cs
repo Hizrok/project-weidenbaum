@@ -5,3 +5,4 @@ public class Question
     public string answer;
     public string[] wrongAnswers = new string[3];
 }
+
