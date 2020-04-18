@@ -1501,22 +1501,307 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - question: question #1
-    answer: answer #1
-    wrongAnswers: []
+  - question: "Kter\xE9 z t\u011Bchto \u010D\xEDsel je re\xE1ln\xE9 ?"
+    answer: "0.3333 periodick\xFDch"
+    wrongAnswers:
+    - "\u03C0"
+    - e
+    - "\u221A2"
+  - question: "Co je to komutitavnost? a nen\xED rovno b"
+    answer: 'a + b  = b + a '
+    wrongAnswers:
+    - 'a - b  = b - a '
+    - a/b = b/a
+    - a - ( b + a ) = b - (a + b )
+  - question: "Se\u0159a\u010F \u010D\xEDsla podle velikosti: -5 ; 6 ; -19 ; 0 ;
+      2 ; -3 ; 87"
+    answer: -19 ; -5 ; -3 ; 0 ; 2 ; 6 ; 87
+    wrongAnswers:
+    - -19 ; 2 ; -3 ; -5  ; 0 ; 6 ; 87
+    - 2 ; -5 ; -19 ; 0 ; 6 ; -3 ; 87
+    - -19 ; 87 ; -3 ; 0 ; 2 ; -5  ;  6
+  - question: "Napi\u0161 v z\xE1kladn\xEDm tvaru: 1.25 periodick\xFDch"
+    answer: 124/99
+    wrongAnswers:
+    - 112/9
+    - 1129/900
+    - 3489/990
+  - question: "Usm\u011Brni zlomek: ( \u221A12 - 2 ) / \u221A3"
+    answer: "( 6 - 2\u221A3 ) / 3"
+    wrongAnswers:
+    - "2\u221A3/3"
+    - "4\u221A3/5"
+    - "3\u221A2/4"
+  - question: "Kter\xE9 \u010D\xEDslo je v\u011Bt\u0161\xED? \u221A5 + \u221A2 nebo
+      \u221A13"
+    answer: "\u221A5 +\u221A2"
+    wrongAnswers:
+    - "\u221A13"
+  - question: "Vy\u0159e\u0161 rovnici: |2x + 1| = 5"
+    answer: x1 = 2, x2 = -3
+    wrongAnswers:
+    - x1 = 3, x2 = -2
+    - x = 4
+    - "Nem\xE1 \u0159e\u0161en\xED"
+  - question: "\u27E8(0,9)\u27E9\u222A\u27E8(5,10)\u27E9 = ?"
+    answer: (0,10)
+    wrongAnswers:
+    - (5,9)
+    - (9,10)
+    - (0,5)
+  - question: "(-5,8) \u2229 (8,22) = ?"
+    answer: "\u2205"
+    wrongAnswers:
+    - (-5,22)
+    - 8
+    - "(-5,8\u27E9\u27E9)"
   - question: 
-    answer: 
-    wrongAnswers: []
-  - question: 
-    answer: 
-    wrongAnswers: []
-  - question: 
-    answer: 
-    wrongAnswers: []
-  - question: 
-    answer: 
-    wrongAnswers: []
-  text: {fileID: 262087742}
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  - question: question #2
+    answer: Yes
+    wrongAnswers:
+    - ne
+    - vubec
+    - neni
+  zivoty: 3
+  otazka: {fileID: 262087742}
+  odpovedi:
+  - {fileID: 1566208958}
+  - {fileID: 1160201529}
+  - {fileID: 381732633}
+  - {fileID: 1601920687}
 --- !u!1 &1906980956
 GameObject:
   m_ObjectHideFlags: 0
