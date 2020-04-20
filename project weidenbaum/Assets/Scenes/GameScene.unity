@@ -202,7 +202,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 87069935}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1608992873}
+        m_MethodName: Button
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &87069935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,7 +708,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 497269477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1608992873}
+        m_MethodName: Button
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &497269477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1558,8 +1580,12 @@ MonoBehaviour:
     - "(-5,8\u27E9\u27E9)"
   lives: 3
   questionIndex: 
-  questionTextBox: {fileID: 0}
-  answerTextBoxes: []
+  questionTextBox: {fileID: 262087742}
+  answerTextBoxes:
+  - {fileID: 1566208958}
+  - {fileID: 1160201529}
+  - {fileID: 381732633}
+  - {fileID: 1601920687}
   timer: {fileID: 1849014759}
   start: 10
 --- !u!1 &1849014757
@@ -1799,12 +1825,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1608992871}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1608992873}
+        m_MethodName: Button
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1927,7 +1953,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1996968310}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1608992873}
+        m_MethodName: Button
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1996968310
 MonoBehaviour:
   m_ObjectHideFlags: 0
