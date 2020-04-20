@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public Question[] questions;
     public int lives = 3;
     public List<int> questionIndex = new List<int>();
+    private int answerIndex; 
     public TextMeshProUGUI questionTextBox;
     public TextMeshProUGUI[] answerTextBoxes;
 
@@ -25,6 +26,15 @@ public class GameController : MonoBehaviour
 
         GetNextQuestion();
     }
+    public void Button(int id)
+    {
+        if (answerIndex != id)
+        {
+            lives--;
+
+        }
+        GetNextQuestion();
+    }
 
     private void Update()
     {
@@ -40,20 +50,19 @@ public class GameController : MonoBehaviour
             {
                 GetNextQuestion();
                 timeStart = start;
+                lives--;
             }
         }
     }
     public void GetNextQuestion()
     {
         int x = Random.Range(0, questionIndex.Count);
-
         string chosenQuestion = questions[questionIndex[x]].question;
         string chosenAnswer = questions[questionIndex[x]].answer;
         questionTextBox.text = chosenQuestion;
-        
         int random = Random.Range(0, 3);
+        answerIndex = random;
         answerTextBoxes[random].text = chosenAnswer;
-
         for (int i = 0; i < 4; i++)
         {
             if (i > random)
