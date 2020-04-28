@@ -25,7 +25,9 @@ public class GameController : MonoBehaviour
     public GameObject dialogueTextBox;
     [Space]
     [Header("Other")]
+    public bool konechry = false;
     public int lives = 3;
+    public GameObject KonechryText;
     #endregion
 
     private void Start()
@@ -40,26 +42,48 @@ public class GameController : MonoBehaviour
     }    
     private void Update()
     {
-        if (timerStart)
+        if (konechry != true)
         {
-            if (countdown >= 0)
+            if (timerStart)
             {
-                countdown -= Time.deltaTime;
-                timerTextBox.text = Mathf.Round(countdown).ToString();
+                if (countdown >= 0)
+                {
+                    countdown -= Time.deltaTime;
+                    timerTextBox.text = Mathf.Round(countdown).ToString();
+                }
+                else
+                {
+                    lives--;
+                    if (lives == 0)
+                    {
+                        konechry = true;
+                        KonechryText.SetActive(true);
+                        ToggleUI(false);
+                    }
+                    else
+                    {
+                        StartCoroutine(FailSequence());
+                    }
+                }
             }
-            else
-            {
-                lives--;
-                StartCoroutine(FailSequence());                
-            }            
-        }        
+        }
+       
     }
     public void Button(int id)
     {
         if (answerIndex != id)
         {
             lives--;            
-            StartCoroutine(FailSequence());
+            if (lives == 0)
+            {
+                konechry = true;
+                KonechryText.SetActive(true);
+                ToggleUI(false);
+            }
+            else
+            {
+                StartCoroutine(FailSequence());
+            }
         }
 
         if (questionIndex.Count != 0 && answerIndex == id)
