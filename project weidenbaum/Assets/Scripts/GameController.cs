@@ -31,10 +31,12 @@ public class GameController : MonoBehaviour
     public GameObject HlaskyText;
     public GameObject KonechryText;
     public TextMeshProUGUI PocetZivotu;
+    public TextMeshProUGUI PocetZivotuText;
     #endregion
 
     private void Start()
     {
+        PocetZivotuText.text = "Pocet zivotu: ";
         PocetZivotu.text = lives.ToString();
         countdown = time;
         for (int i = 0; i < questions.Length; i++)
