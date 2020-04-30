@@ -30,10 +30,12 @@ public class GameController : MonoBehaviour
     public string[] hlasky;
     public GameObject HlaskyText;
     public GameObject KonechryText;
+    public TextMeshProUGUI PocetZivotu;
     #endregion
 
     private void Start()
     {
+        PocetZivotu.text = lives.ToString();
         countdown = time;
         for (int i = 0; i < questions.Length; i++)
         {
@@ -56,6 +58,7 @@ public class GameController : MonoBehaviour
                 else
                 {
                     lives--;
+                    PocetZivotu.text = lives.ToString();
                     if (lives == 0)
                     {
                         konechry = true;
@@ -76,8 +79,8 @@ public class GameController : MonoBehaviour
         if (answerIndex != id)
         {
            
-            lives--;    
-            
+            lives--;
+            PocetZivotu.text = lives.ToString();
             if (lives == 0)
             {
                 konechry = true;
@@ -122,17 +125,14 @@ public class GameController : MonoBehaviour
         timerStart = false;
         ToggleUI(false);
         Camera.main.GetComponent<Animator>().SetBool("Zoom", false);
-
         yield return new WaitForSeconds(1);
         int indexHlasky = Random.Range(0, hlasky.Length);
         HlaskyText.SetActive(true);
         HlaskyText.GetComponent<TextMeshProUGUI>().text = hlasky[indexHlasky];
         GameObject.Find("teacher").GetComponent<Animator>().SetInteger("State", 3-lives);
-
         yield return new WaitForSeconds(2);
         HlaskyText.SetActive(false);
         Camera.main.GetComponent<Animator>().SetBool("Zoom", true);
-
         yield return new WaitForSeconds(1);
         ToggleUI(true);
         countdown = time;
