@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
     [Header("Other")]
     public bool konechry = false;
     public int lives = 3;
+    public string[] hlasky;
+    public GameObject HlaskyText;
     public GameObject KonechryText;
     #endregion
 
@@ -73,7 +75,9 @@ public class GameController : MonoBehaviour
     {
         if (answerIndex != id)
         {
-            lives--;            
+           
+            lives--;    
+            
             if (lives == 0)
             {
                 konechry = true;
@@ -120,9 +124,13 @@ public class GameController : MonoBehaviour
         Camera.main.GetComponent<Animator>().SetBool("Zoom", false);
 
         yield return new WaitForSeconds(1);
+        int indexHlasky = Random.Range(0, hlasky.Length);
+        HlaskyText.SetActive(true);
+        HlaskyText.GetComponent<TextMeshProUGUI>().text = hlasky[indexHlasky];
         GameObject.Find("teacher").GetComponent<Animator>().SetInteger("State", 3-lives);
 
         yield return new WaitForSeconds(2);
+        HlaskyText.SetActive(false);
         Camera.main.GetComponent<Animator>().SetBool("Zoom", true);
 
         yield return new WaitForSeconds(1);
