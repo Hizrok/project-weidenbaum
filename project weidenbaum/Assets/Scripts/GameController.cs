@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -22,14 +23,22 @@ public class GameController : MonoBehaviour
     [Space]
     [Header("UI")]
     public GameObject UIPanel;
-    public GameObject dialogueTextBox;
+    [Space]
+    [Header("Game over UI")]
+    public GameObject gameOverUI;
+    public GameObject gameOverImg;
+    public GameObject mistakesTextBox;
+    public GameObject timeTextBox;
+    public GameObject gradeTextBox;
+    public GameObject menuBtn;
+    public GameObject replayBtn;
+    public GameObject nextBtn;
     [Space]
     [Header("Other")]
     public bool konechry = false;
     public int lives = 3;
     public string[] hlasky;
     public GameObject HlaskyText;
-    public GameObject KonechryText;
     public TextMeshProUGUI PocetZivotu;
     public TextMeshProUGUI PocetZivotuText;
     #endregion
@@ -64,8 +73,8 @@ public class GameController : MonoBehaviour
                     if (lives == 0)
                     {
                         konechry = true;
-                        KonechryText.SetActive(true);
                         ToggleUI(false);
+                        StartCoroutine(GameOverSequence());
                     }
                     else
                     {
@@ -86,8 +95,8 @@ public class GameController : MonoBehaviour
             if (lives == 0)
             {
                 konechry = true;
-                KonechryText.SetActive(true);
                 ToggleUI(false);
+                StartCoroutine(GameOverSequence());
             }
             else
             {
@@ -143,6 +152,30 @@ public class GameController : MonoBehaviour
         {
             GetNextQuestion();
         }
+    }
+    IEnumerator GameOverSequence()
+    {
+        gameOverUI.SetActive(true);
+        Image r = gameOverUI.GetComponent<Image>();
+        LeanTween.value(gameOverUI, 0, .6f, 1).setOnUpdate((float val) =>
+        {
+            Color c = r.color;
+            c.a = val;
+            r.color = c;
+        });
+        LeanTween.moveLocalY(gameOverImg, 0, 1).setDelay(1);
+        yield return new WaitForSeconds(2.5f);
+        mistakesTextBox.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        timeTextBox.SetActive(true);
+        yield return new WaitForSeconds(1);
+        gradeTextBox.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        menuBtn.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        replayBtn.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        nextBtn.SetActive(true);
     }
     public void CameraZoom(bool b)
     {
