@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     private int answerIndex;
     public TextMeshProUGUI questionTextBox;
     public TextMeshProUGUI[] answerTextBoxes;    
-    private List<int> questionIndex = new List<int>();
+    public List<int> questionIndex = new List<int>();
     [Space]
     [Header("Timer")]
     public TextMeshProUGUI timerTextBox;
@@ -39,14 +39,13 @@ public class GameController : MonoBehaviour
     public int lives = 3;
     public string[] hlasky;
     public GameObject HlaskyText;
-    public TextMeshProUGUI PocetZivotu;
     public TextMeshProUGUI PocetZivotuText;
+    public float FinalTime;
     #endregion
 
     private void Start()
     {
-        PocetZivotuText.text = "Pocet zivotu: ";
-        PocetZivotu.text = lives.ToString();
+        PocetZivotuText.text = "Pocet zivotu: " + lives.ToString();
         countdown = time;
         for (int i = 0; i < questions.Length; i++)
         {
@@ -64,12 +63,13 @@ public class GameController : MonoBehaviour
                 if (countdown >= 0)
                 {
                     countdown -= Time.deltaTime;
-                    timerTextBox.text = Mathf.Round(countdown).ToString();
+                    timerTextBox.text = Mathf.RoundToInt(countdown).ToString();
                 }
                 else
                 {
                     lives--;
-                    PocetZivotu.text = lives.ToString();
+                    PocetZivotuText.text = "Pocet zivotu: " + lives.ToString();
+                    FinalTime += 10 - countdown;
                     if (lives == 0)
                     {
                         konechry = true;
@@ -91,12 +91,14 @@ public class GameController : MonoBehaviour
         {
            
             lives--;
-            PocetZivotu.text = lives.ToString();
-            if (lives == 0)
+            PocetZivotuText.text = "Pocet zivotu: " + lives.ToString();
+            FinalTime += 10 - countdown;
+            if (lives == 0 || questionIndex.Count == 0)
             {
                 konechry = true;
                 ToggleUI(false);
                 StartCoroutine(GameOverSequence());
+                
             }
             else
             {
@@ -104,11 +106,17 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (questionIndex.Count != 0 && answerIndex == id)
+        if (questionIndex.Count != 0 && answerIndex == id )
         {
             countdown = time;
             GetNextQuestion();            
-        }    
+        }
+        else if (questionIndex.Count == 0)
+        {
+            konechry = true;
+            ToggleUI(false);
+            StartCoroutine(GameOverSequence());
+        }
     }
     public void GetNextQuestion()
     {
@@ -155,6 +163,28 @@ public class GameController : MonoBehaviour
     }
     IEnumerator GameOverSequence()
     {
+        int finalgrade = 0;
+        switch (lives)
+        {
+            case 3:
+                finalgrade = 1;
+                break;
+            case 2:
+                finalgrade = 2;
+                break;
+            case 1:
+                finalgrade = 3;
+                break;
+            case 0:
+                finalgrade = 5;
+                nextBtn.GetComponent<Button>().interactable = false;
+                break;
+            default:
+                break;
+        }
+        gradeTextBox.GetComponent<TextMeshProUGUI>().text = finalgrade.ToString();
+        timeTextBox.GetComponent<TextMeshProUGUI>().text += FinalTime.ToString() + "s";
+        mistakesTextBox.GetComponent<TextMeshProUGUI>().text += (3 - lives).ToString(); 
         gameOverUI.SetActive(true);
         Image r = gameOverUI.GetComponent<Image>();
         LeanTween.value(gameOverUI, 0, .6f, 1).setOnUpdate((float val) =>
